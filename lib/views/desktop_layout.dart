@@ -10,7 +10,17 @@ class DesktopLayout extends StatelessWidget {
     return const Row(
       children: [
         Expanded(child: CustomDrawer()),
-        Expanded(flex: 3, child: AllExpenses()),
+        SizedBox(width: 32),
+        Expanded(
+            flex: 3,
+            child: Column(
+              children: [
+                AllExpenses(),
+                //todo: add Quick Invoice
+              ],
+            )),
+        SizedBox(width: 24),
+        Expanded(flex: 2, child: SizedBox()),
       ],
     );
   }
