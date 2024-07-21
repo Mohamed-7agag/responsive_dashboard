@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/utils/app_styles.dart';
 
 class AllExpensesHeaderDuration extends StatelessWidget {
-  const AllExpensesHeaderDuration({
-    super.key,
-  });
+  const AllExpensesHeaderDuration({super.key});
 
   @override
   Widget build(BuildContext context) {
