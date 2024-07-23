@@ -12,12 +12,14 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.sizeOf(context).width * 0.7,
       color: Colors.white,
-      child: const CustomScrollView(
+      child: CustomScrollView(
         slivers: [
           SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            sliver: SliverToBoxAdapter(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20).copyWith(top: 20),
+            sliver: const SliverToBoxAdapter(
               child: UserInfoListTile(
                 userInfoModel: UserInfoModel(
                   name: 'Lekan Okeowo',
@@ -27,11 +29,11 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(height: 8),
           ),
-          DrawerListView(),
-          SliverFillRemaining(
+          const DrawerListView(),
+          const SliverFillRemaining(
             hasScrollBody: false,
             child: Column(
               children: [

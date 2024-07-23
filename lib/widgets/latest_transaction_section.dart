@@ -15,7 +15,7 @@ class LatestTransactionSection extends StatelessWidget {
           'Latest transaction',
           style: AppStyles.styleMedium16(context),
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: 16),
         const LatestTransactionListView(),
         const Divider(
           height: 48,
