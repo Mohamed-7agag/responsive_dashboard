@@ -18,19 +18,21 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: MediaQuery.sizeOf(context).width < 800
+      appBar: AdaptiveLayout.isMobile(context)
           ? AppBar(
-              backgroundColor: const Color(0xffF7F9FA),
+              backgroundColor: const Color(0xff4EB7F2),
               leading: IconButton(
                 onPressed: () {
                   scaffoldKey.currentState?.openDrawer();
                 },
-                icon: const Icon(Icons.menu),
+                icon: const Icon(
+                  Icons.menu,
+                  color: Colors.white,
+                ),
               ),
             )
           : null,
-      drawer:
-          MediaQuery.sizeOf(context).width < 800 ? const CustomDrawer() : null,
+      drawer: AdaptiveLayout.isMobile(context) ? const CustomDrawer() : null,
       backgroundColor: const Color(0xffF7F9FA),
       body: AdaptiveLayout(
         mobileLayout: (context) => const MobileLayout(),

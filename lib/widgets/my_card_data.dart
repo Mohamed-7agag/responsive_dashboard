@@ -9,10 +9,11 @@ class MyCardData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         ListTile(
-          contentPadding: const EdgeInsets.only(left: 31, top: 20, right: 45),
+          contentPadding: const EdgeInsets.only(left: 31, top: 16, right: 42),
           title: Text(
             'Name card',
             style:
@@ -24,6 +25,7 @@ class MyCardData extends StatelessWidget {
           ),
           trailing: SvgPicture.asset(Assets.imagesGallery),
         ),
+        const Expanded(child: SizedBox()),
         Padding(
           padding: const EdgeInsets.only(right: 24),
           child: Column(
@@ -34,19 +36,16 @@ class MyCardData extends StatelessWidget {
                 style: AppStyles.styleSemiBold24(context)
                     .copyWith(color: Colors.white),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 10),
               Text(
                 '12/20 - 124',
                 style: AppStyles.styleRegular16(context)
                     .copyWith(color: Colors.white),
               ),
-              const SizedBox(
-                height: 20,
-                width: double.infinity,
-              )
             ],
           ),
-        )
+        ),
+        const Flexible(child: SizedBox(height: 16))
       ],
     );
   }

@@ -12,13 +12,9 @@ class TabletLayout extends StatelessWidget {
         Expanded(flex: 2, child: CustomDrawer()),
         Expanded(
           flex: 5,
-          child: Padding(
-            padding: EdgeInsets.only(top: 20),
-            child: MobileLayout(),
-          ),
+          child: MobileLayout(),
         ),
       ],
     );
   }
 }
-

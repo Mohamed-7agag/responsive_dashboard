@@ -12,21 +12,33 @@ class TransactionHistoryItem extends StatelessWidget {
       elevation: 0,
       color: const Color(0x00FAFAFA),
       child: ListTile(
-        title: Text(
-          transactionHistoryItemModel.title,
-          style: AppStyles.styleSemiBold16(context),
+        title: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: AlignmentDirectional.centerStart,
+          child: Text(
+            transactionHistoryItemModel.title,
+            style: AppStyles.styleSemiBold16(context),
+          ),
         ),
-        subtitle: Text(
-          transactionHistoryItemModel.date,
-          style: AppStyles.styleRegular16(context)
-              .copyWith(color: const Color(0xffAAAAAA)),
+        subtitle: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: AlignmentDirectional.centerStart,
+          child: Text(
+            transactionHistoryItemModel.date,
+            style: AppStyles.styleRegular16(context)
+                .copyWith(color: const Color(0xffAAAAAA)),
+          ),
         ),
-        trailing: Text(
-          transactionHistoryItemModel.amount,
-          style: AppStyles.styleSemiBold20(context).copyWith(
-            color: transactionHistoryItemModel.isIncome
-                ? const Color(0xff7DD97B)
-                : const Color(0xffF3735E),
+        trailing: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: AlignmentDirectional.centerStart,
+          child: Text(
+            transactionHistoryItemModel.amount,
+            style: AppStyles.styleSemiBold20(context).copyWith(
+              color: transactionHistoryItemModel.isIncome
+                  ? const Color(0xff7DD97B)
+                  : const Color(0xffF3735E),
+            ),
           ),
         ),
       ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AdaptiveLayout extends StatelessWidget {
   final WidgetBuilder mobileLayout, tabletLayout, desktopLayout;
 
-  static const int mobileBreakpoint = 800;
+  static const int tabletBreakpoint = 800;
   static const int desktopBreakpoint = 1200;
 
   const AdaptiveLayout({
@@ -14,12 +14,12 @@ class AdaptiveLayout extends StatelessWidget {
   });
 
   static bool isMobile(BuildContext context) {
-    return MediaQuery.of(context).size.width < mobileBreakpoint;
+    return MediaQuery.of(context).size.width < tabletBreakpoint;
   }
 
   static bool isTablet(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    return width >= mobileBreakpoint && width < desktopBreakpoint;
+    return width >= tabletBreakpoint && width < desktopBreakpoint;
   }
 
   static bool isDesktop(BuildContext context) {
@@ -32,7 +32,7 @@ class AdaptiveLayout extends StatelessWidget {
       builder: (context, constraints) {
         if (constraints.maxWidth >= desktopBreakpoint) {
           return desktopLayout(context);
-        } else if (constraints.maxWidth >= mobileBreakpoint) {
+        } else if (constraints.maxWidth >= tabletBreakpoint) {
           return tabletLayout(context);
         }
         return mobileLayout(context);
